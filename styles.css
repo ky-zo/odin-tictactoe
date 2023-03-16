@@ -1,0 +1,88 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100dvw;
+    height: 100dvh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.game {
+    border: 0.5px black solid;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+}
+
+.game-field {
+    border: 0.25px solid black;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border-radius: 10px;
+    z-index: 1;
+    width: clamp(300px, 20vw, 40vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    padding: 20px;
+}
+
+.game-field:hover {
+    background-color: lightgreen;
+    transition: 300ms;
+}
+
+.reset-button {
+    border: none;
+    border-radius: 5px;
+    background-color: lightgrey;
+    padding: 10px 15px;
+}
+
+.reset-button:hover {
+    background-color: white;
+    border: 1px black solid;
+    transition: 200ms;
+}
